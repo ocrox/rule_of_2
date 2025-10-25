@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq2nwxd4ryvt1"]
+
+[ext_resource type="Texture2D" uid="uid://inrjf3w7lwfh" path="res://Free Platform Game Assets/Platform Game Assets/Tiles/png/128x128/Pixel Adventure 1/Free/Terrain/Terrain (16x16).png" id="1_7h0kd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6t24"]
+size = Vector2(16, 16)
+
+[node name="Tiles" type="Node"]
+
+[node name="0" type="Sprite2D" parent="."]
+texture = ExtResource("1_7h0kd")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="0/StaticBody2D"]
+visible = false
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_k6t24")

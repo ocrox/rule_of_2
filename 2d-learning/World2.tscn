@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0c00nemv8u70"]
+
+[ext_resource type="Texture2D" uid="uid://pkuxdots5cly" path="res://Free Platform Game Assets/Platform Game Assets/Background/png/1920x1080/Background/Background.png" id="1_2mcl5"]
+[ext_resource type="Texture2D" uid="uid://ddnwlmwh2fhn6" path="res://Free Platform Game Assets/Platform Game Assets/Tiles/png/128x128/GrassHillLeft.png" id="2_2mcl5"]
+[ext_resource type="PackedScene" uid="uid://cjjl5ivq4chc4" path="res://BaseMidPlatform.tscn" id="2_507ey"]
+[ext_resource type="PackedScene" uid="uid://di32ljwkjsfs4" path="res://Player.tscn" id="3_0okxu"]
+[ext_resource type="PackedScene" uid="uid://chenrcci1sx4m" path="res://MapTransition.tscn" id="4_tlxj8"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 1024.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.5555555, 0.5555556)
+texture = ExtResource("1_2mcl5")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(64, 576)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_2mcl5")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(16, -16, 64, -64, 64, 64, -64, 64)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_507ey")]
+position = Vector2(192, 576)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_507ey")]
+position = Vector2(320, 576)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_507ey")]
+position = Vector2(448, 576)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_507ey")]
+position = Vector2(576, 544)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_507ey")]
+position = Vector2(704, 544)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("2_507ey")]
+position = Vector2(904, 480)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("2_507ey")]
+position = Vector2(1056, 352)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_0okxu")]
+position = Vector2(104, 360)
+scale = Vector2(0.5, 0.5)
+
+[node name="MapTransition" parent="." instance=ExtResource("4_tlxj8")]
+position = Vector2(736, 16)
+scale = Vector2(0.25, 0.25)
+next_world = "uid://cin1ari5ffyg4"

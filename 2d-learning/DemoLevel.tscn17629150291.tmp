@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://cin1ari5ffyg4"]
+
+[ext_resource type="Texture2D" uid="uid://pkuxdots5cly" path="res://Free Platform Game Assets/Platform Game Assets/Background/png/1920x1080/Background/Background.png" id="1_yxkqd"]
+[ext_resource type="PackedScene" uid="uid://cjjl5ivq4chc4" path="res://BaseMidPlatform.tscn" id="2_d74ud"]
+[ext_resource type="PackedScene" uid="uid://di32ljwkjsfs4" path="res://R2D2.tscn" id="3_d74ud"]
+[ext_resource type="PackedScene" uid="uid://chenrcci1sx4m" path="res://map_transition.tscn" id="4_xnn86"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1024.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.5555555, 0.5555556)
+texture = ExtResource("1_yxkqd")
+centered = false
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_d74ud")]
+position = Vector2(64, 576)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_d74ud")]
+position = Vector2(192, 576)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_d74ud")]
+position = Vector2(320, 576)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_d74ud")]
+position = Vector2(448, 576)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_d74ud")]
+position = Vector2(576, 544)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_d74ud")]
+position = Vector2(704, 544)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("2_d74ud")]
+position = Vector2(904, 480)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("2_d74ud")]
+position = Vector2(1056, 352)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_d74ud")]
+position = Vector2(200, 240)
+
+[node name="MapTransition" parent="." instance=ExtResource("4_xnn86")]

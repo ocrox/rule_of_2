@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://chenrcci1sx4m"]
+
+[ext_resource type="Script" uid="uid://pk84i3uckpdb" path="res://map_transition.gd" id="1_c8hr4"]
+[ext_resource type="Texture2D" uid="uid://bdgj5273ee5at" path="res://icon.svg" id="1_t1oyb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8hr4"]
+size = Vector2(128, 128)
+
+[node name="MapTransition" type="Area2D"]
+script = ExtResource("1_c8hr4")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t1oyb")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(64, 64)
+shape = SubResource("RectangleShape2D_c8hr4")
